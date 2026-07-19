@@ -1,0 +1,11 @@
+{
+  "name": "etzhayyim-wasm-flight-offer-fl1ghts1",
+  "version": "1.0.0",
+  "description": "flight-offer.etzhayyim.com — Skyscanner-equivalent fare aggregation. Logic lives in BPMN/LangServer; this Worker is the appview surface.",
+  "main": "src/app.ts",
+  "type": "module",
+  "dependencies": {
+    "@etzhayyim/kotodama-host-sdk": "workspace:*",
+    "@etzhayyim/xrpc": "workspace:*"
+  }
+}

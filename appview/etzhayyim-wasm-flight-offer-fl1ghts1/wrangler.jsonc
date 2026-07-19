@@ -1,0 +1,41 @@
+{
+  "name": "kotodama-fl1ghts1",
+  "main": "svelte/.svelte-kit/cloudflare/_worker.js",
+  "compatibility_date": "2025-03-17",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "nodejs_als"
+  ],
+  "assets": {
+    "directory": "./svelte/.svelte-kit/cloudflare/client",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  },
+  "vars": {
+    "APP_ACTOR_HANDLE": "flight-offer",
+    "APP_CAPABILITIES": "[\"flight-fare-search\",\"fare-watchlist\",\"price-drop-alerting\"]",
+    "APP_DESCRIPTION": "Skyscanner-equivalent flight fare aggregation. Polls Amadeus / Duffel on a 6h cadence, persists offers to vertex_flight_offer, fires drop alerts when cheapest price falls past a per-watch threshold, and broadcasts via app.bsky.feed.post.",
+    "APP_DISPLAY_NAME": "Flight Offer",
+    "APP_EMBED_URL": "https://fl1ghts1.etzhayyim.com/embed",
+    "APP_FRAMEWORK": "sveltekit-edge-bff",
+    "APP_NANOID": "fl1ghts1",
+    "APP_PERFORMER_TYPE": "service",
+    "APP_UI_TYPE": "appview",
+    "AGENTGATEWAY_MCP_ROUTER_URL": "https://mcp.etzhayyim.com/xrpc/com.etzhayyim.mcp.message"
+  },
+  "rules": [
+    {
+      "type": "CompiledWasm",
+      "globs": [
+        "**/*.wasm"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "pattern": "fl1ghts1.etzhayyim.com/*",
+      "zone_name": "etzhayyim.com"
+    }
+  ]
+}

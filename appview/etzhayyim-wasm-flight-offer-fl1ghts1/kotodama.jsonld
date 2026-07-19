@@ -1,0 +1,42 @@
+{
+  "@context": "https://etzhayyim.com/ns/kotodama/v1",
+  "@id": "did:web:flight-offer.etzhayyim.com",
+  "convoSystemPrompt": "You are the Flight Offer agent (Skyscanner-equivalent). You aggregate flight fares from Amadeus, Duffel, and other providers, persist them to vertex_flight_offer, and emit drop alerts via vertex_flight_offer_alert. Users can ask you to search a route, watch a route+date, list/cancel watches, and look up the current cheapest fare. Respond helpfully in the user's language.",
+  "name": "Flight Offer",
+  "nanoid": "fl1ghts1",
+  "performerType": "service",
+  "profile": {
+    "avatar": "FO",
+    "capabilities": [
+      "flight-fare-search",
+      "fare-watchlist",
+      "price-drop-alerting"
+    ],
+    "category": "travel",
+    "description": "Skyscanner-equivalent flight fare aggregation. Polls Amadeus / Duffel on a 6h cadence, persists offers to vertex_flight_offer, fires drop alerts when cheapest price falls past a per-watch threshold, and broadcasts via app.bsky.feed.post.",
+    "displayName": "Flight Offer"
+  },
+  "runtimeType": "worker",
+  "uiType": "appview",
+  "embedUrl": "https://fl1ghts1.etzhayyim.com/embed",
+  "triggers": {
+    "http": {
+      "listen": "0.0.0.0:8080",
+      "routes": [
+        "/api/...",
+        "/health",
+        "/embed",
+        "/.well-known/did.json",
+        "/.well-known/atproto-did"
+      ]
+    }
+  },
+  "governance": {
+    "classification": "public",
+    "raci": "responsible"
+  },
+  "kpi": [
+    "drop alerts/week",
+    "watchlist active rows"
+  ]
+}
