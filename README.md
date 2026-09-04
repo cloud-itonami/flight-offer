@@ -70,7 +70,8 @@ kotoba/test/
   flight-offer.test.ts   4 vitest cases against an in-memory PDS mock
 appview/etzhayyim-wasm-flight-offer-fl1ghts1/
   src/app.ts   a self-contained embed page (dark, hand-written CSS)
-  svelte/      SvelteKit BFF; xrpc/[...path] proxies to the MCP router
+  src/xrpc-mcp-router-proxy.ts  SvelteKit XRPC proxy, preserved un-wired
+  web/dist/    cljs+reagent document (single page)
   wrangler.jsonc  route fl1ghts1.etzhayyim.com/*
 ```
 

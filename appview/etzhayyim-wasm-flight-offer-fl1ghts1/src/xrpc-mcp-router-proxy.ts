@@ -1,3 +1,6 @@
+// SVELTEKIT-BACKEND-PRESERVED: moved out of svelte/ during the cljs migration; not wired.
+// Was svelte/src/routes/xrpc/[...path]/+server.ts. SvelteKit RequestHandler / $types
+// imports remain; this file is salvage, not a live Cloudflare entry.
 import { json, type RequestEvent } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
