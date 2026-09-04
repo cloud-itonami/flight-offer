@@ -1,7 +1,6 @@
 (ns cloud-itonami.app-flight-offer.state
-  "App state for the flight-offer appview UI. Single reagent atom mirroring
-  the app descriptor that appview/etzhayyim-wasm-flight-offer-fl1ghts1/svelte's
-  +page.svelte rendered (project facts, routes, runtime bindings)."
+  "App state for the flight-offer appview UI. Single reagent atom with the
+  project facts, routes, and runtime bindings the former +page.svelte showed."
   (:require [reagent.core :as r]))
 
 (defonce state
@@ -13,5 +12,5 @@
           :route-count 0
           :routes []
           :vars []
-          :xrpc true
-          :relative-path "60-apps/etzhayyim-project-flight-offer/appview/etzhayyim-wasm-flight-offer-fl1ghts1/svelte/src/routes/+page.svelte"}}))
+          :xrpc false
+          :relative-path "src/cloud_itonami/app_flight_offer/ui.cljs"}}))

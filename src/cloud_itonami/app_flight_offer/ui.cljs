@@ -1,7 +1,6 @@
 (ns cloud-itonami.app-flight-offer.ui
   "View tree for the flight-offer appview. Structural chrome comes from
-  appkit.core / kotoba-ui.core (murakumo-studio構成). Mirrors the single
-  screen in appview/etzhayyim-wasm-flight-offer-fl1ghts1/svelte/src/routes/+page.svelte:
+  appkit.core / kotoba-ui.core (murakumo-studio構成). Single screen:
   top header, facts grid, public-routes panel, runtime-bindings panel and a
   source-path panel."
   (:require [appkit.core :as shape]

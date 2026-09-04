@@ -1,13 +1,12 @@
 {
   "name": "kotodama-fl1ghts1",
-  "main": "svelte/.svelte-kit/cloudflare/_worker.js",
   "compatibility_date": "2025-03-17",
   "compatibility_flags": [
     "nodejs_compat",
     "nodejs_als"
   ],
   "assets": {
-    "directory": "./svelte/.svelte-kit/cloudflare/client",
+    "directory": "./web/dist",
     "binding": "ASSETS",
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "none"
@@ -18,7 +17,7 @@
     "APP_DESCRIPTION": "Skyscanner-equivalent flight fare aggregation. Polls Amadeus / Duffel on a 6h cadence, persists offers to vertex_flight_offer, fires drop alerts when cheapest price falls past a per-watch threshold, and broadcasts via app.bsky.feed.post.",
     "APP_DISPLAY_NAME": "Flight Offer",
     "APP_EMBED_URL": "https://fl1ghts1.etzhayyim.com/embed",
-    "APP_FRAMEWORK": "sveltekit-edge-bff",
+    "APP_FRAMEWORK": "cljs-reagent-re-frame-jp-go-dds",
     "APP_NANOID": "fl1ghts1",
     "APP_PERFORMER_TYPE": "service",
     "APP_UI_TYPE": "appview",
