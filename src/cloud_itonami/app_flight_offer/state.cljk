@@ -13,4 +13,4 @@
           :routes []
           :vars []
           :xrpc false
-          :relative-path "src/cloud_itonami/app_flight_offer/ui.cljs"}}))
+          :relative-path "src/cloud_itonami/app_flight_offer/ui.cljk"}}))
