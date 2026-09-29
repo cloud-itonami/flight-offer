@@ -7,13 +7,13 @@
 
 This repo describes itself twice, and the two descriptions are incompatible.
 
-**Description A — RisingWave + LangServer + BPMN.** Held by `CLAUDE.md`,
+**Description A — RisingWave + LangServer + BPMN.** Held by `AGENTS.md`,
 `kotodama.jsonld`, `appview/.../package.json`, and `wrangler.jsonc`. It names
 ten `vertex_*` / `mv_*` / `edge_*` relations, twelve LangServer primitives
 (`flight.offer.{fetch,fetchFromSource,checkDrop,addWatch,removeWatch,listWatch,getCheapest,pollWatchlist,listSources,listAirlines,sourceHealth,cleanupRuns}`),
 twelve BPMN files under `etzhayyim/root:00-contracts/bpmn/`, an `R/PT6H` poll
 timer, a `zeebe` namespace to `kubectl rollout restart`, and a registry of 42
-IATA airlines across 8 sources. `CLAUDE.md` carries a deployment table dated
+IATA airlines across 8 sources. `AGENTS.md` carries a deployment table dated
 2026-04-28 whose last three rows are `❌ pending`.
 
 **Description B — AT Protocol PDS records.** Held by `kotoba/`. Three
@@ -24,7 +24,7 @@ ADR-2606011400 (function split), and its own header says "AT PDS records
 
 They do not overlap. The API names differ, the storage differs, the
 orchestration differs. A reader arriving at this repo cold cannot tell from the
-file layout which one to extend, and `CLAUDE.md` — the file an agent reads
+file layout which one to extend, and `AGENTS.md` — the file an agent reads
 first — is the one describing the system that is not here.
 
 Description A is not merely stale, it is **excluded by accepted policy**:
@@ -48,9 +48,9 @@ extraction from `etzhayyim/root` left the workspace behind.
    logic goes there, against AT PDS records.
 2. **Description A is historical.** Do not implement against `vertex_*`
    relations, LangServer primitives, or the BPMN contracts. Do not treat the
-   `CLAUDE.md` deployment table's `❌ pending` rows as a work queue — they are
+   `AGENTS.md` deployment table's `❌ pending` rows as a work queue — they are
    pending steps for a system this repo does not contain.
-3. **`CLAUDE.md`, `kotodama.jsonld`, `appview/`, and `migration.edn` stay as
+3. **`AGENTS.md`, `kotodama.jsonld`, `appview/`, and `migration.edn` stay as
    they are.** They are provenance. Rewriting them would erase the record of
    what this app was before the migration, and `MIGRATION-TODO.md` still needs
    that record to close the Charter §2(a)-(h) review. `README.md` carries the
@@ -63,10 +63,10 @@ extraction from `etzhayyim/root` left the workspace behind.
 
 ## Consequences
 
-- A reader who follows `CLAUDE.md` will now find `README.md` first and be told
+- A reader who follows `AGENTS.md` will now find `README.md` first and be told
   it is historical. Before this ADR the two files were equally authoritative
-  and `CLAUDE.md` was the one an agent loads automatically.
-- The twelve-primitive XRPC surface in `CLAUDE.md` is **wider** than the ten
+  and `AGENTS.md` was the one an agent loads automatically.
+- The twelve-primitive XRPC surface in `AGENTS.md` is **wider** than the ten
   functions in `kotoba/`. Four of its capabilities have no counterpart:
   multi-source fetch (`fetchFromSource`), the source registry (`listSources`,
   `listAirlines`, `sourceHealth`), the poll loop (`pollWatchlist`), and run
@@ -83,7 +83,7 @@ extraction from `etzhayyim/root` left the workspace behind.
 in `MIGRATION-TODO.md` is open, and it is a review of *what was copied in*.
 Deleting the evidence before the review would make the review unanswerable.
 
-**Rewrite `CLAUDE.md` to describe `kotoba/`.** Rejected for this iteration on
+**Rewrite `AGENTS.md` to describe `kotoba/`.** Rejected for this iteration on
 scope, not on principle — it is the right end state, but doing it in the same
 change that first names the discrepancy would leave no artifact showing that
 the discrepancy existed. A follow-up may do it, citing this ADR.

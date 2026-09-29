@@ -18,9 +18,9 @@ call, you are in the wrong repo (booking is `air-book` or the provider).
 - **Function split**: ADR-2606011400
 - **Collections**: `com.etzhayyim.apps.flightOffer.{offer,watch,alert}`
 
-## Read this before `CLAUDE.md`: two architectures live in this repo
+## Read this before `AGENTS.md`: two architectures live in this repo
 
-`CLAUDE.md`, `appview/`, and `kotodama.jsonld` describe a **RisingWave +
+`AGENTS.md`, `appview/`, and `kotodama.jsonld` describe a **RisingWave +
 LangServer + BPMN** implementation — `vertex_flight_offer` tables, twelve
 LangServer primitives, twelve BPMN files, a `pollWatchlist` R/PT6H timer, a
 zeebe cluster. **None of that is in this repo, and none of it is the
@@ -29,7 +29,7 @@ substrate of record.** It describes the pre-migration system that lived in
 the seed.
 
 The substrate of record is `kotoba/`, which is AT PDS records and nothing else.
-The two do not even agree on the API: `CLAUDE.md` documents an XRPC surface of
+The two do not even agree on the API: `AGENTS.md` documents an XRPC surface of
 `searchOffers` / `checkPriceDrop` / `addWatch` / `pollWatchlist` / `listSources`
 / `sourceHealth`; `kotoba/` exports `recordOffer` / `getCheapestFare` /
 `createWatch` / `fireAlert` / `coverage`. They are different systems with the
@@ -162,5 +162,5 @@ the seed came from and are left as they are: identity is the path
   typecheck, test, and how to prove the tests can fail
 - [`docs/adr/0001-kotoba-is-the-substrate-of-record.md`](docs/adr/0001-kotoba-is-the-substrate-of-record.md)
 - `MIGRATION-TODO.md` — the Charter §2(a)-(h) checklist, still open
-- `CLAUDE.md` — the retired RisingWave/LangServer design; historical
+- `AGENTS.md` — the retired RisingWave/LangServer design; historical
 - `migration.edn` — provenance of the seed (`etzhayyim/root` @ `f9432ab5`)
